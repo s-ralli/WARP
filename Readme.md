@@ -9,7 +9,7 @@ Note: Each file in the reference folder provides a name, heading and formatting 
 Command to run the scripts in the WARP folder -
 1. source <downloaded folder path>/WARP/WARP/environment/conf/python_env.sh 
 2. <downloaded folder path>/WARP/bin/config_writer.py -d "< Path to INPUT folder >" -o "< Path to OUTPUT folder >"
-3. python <downloaded folder path>/WARP/bin/run_analysis.py -c < Path to OUTPUT folder>/lc_fam_config.ini > -o < Path to OUTPUT folder >
+3. python <downloaded folder path>/WARP/bin/run_analysis.py -c < Path to OUTPUT folder >/lc_fam_config.ini -o < Path to OUTPUT folder >
 Note: Create and input folder with the .vcf files for analysis and and output folder to store the .tsv files
 
 The script should provide a .tsv file with FSVW that can be used to annotate the VCF files of the families with FSVW. The annotated FSVW vcf files can be merged using bcftools, and the variants with FSVW can be extracted as a .xlxs file. The .xlxs file can be used to average FSVW for the variants and generate multi-family weight (MFW) for further analysis.
