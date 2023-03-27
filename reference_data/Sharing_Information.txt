@@ -1,0 +1,2 @@
+Family ID	Sharing weight	1/sw
+12	  1/2 	2
