@@ -1,0 +1,18 @@
+# perl from conda bioconda channel: conda install -c bioconda perl-bioperl
+perl-bioperl
+paramiko
+yaml
+pyyaml
+python-dateutil>=2.6.0
+pytz>=2016.10
+six>=1.10.0
+PyVCF>=0.6.7
+pysam>=0.15.0
+xlwt>=0.7.5
+xlrd>=0.9.0
+sphinxcontrib-programoutput>=0.10
+pysam>=0.11.2.2
+pandas>=0.19.1
+# For testing
+nose
+mock
