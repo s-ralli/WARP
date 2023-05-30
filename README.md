@@ -12,7 +12,7 @@ The reference folder provides sample files for these 3 files. Each sample file c
 **Note:** Subtyp1 in the Incidence_Information.txt file is the combination of disease and gender.
 
 ## Command to run WARP -
-1. The requirements.txt provides an add-on python libraries list that need to be downloaded. Create an environment of these files and then source the python environment to run steps 2 and 3.   
+1. The requirements.txt provides additional python libraries that are need to run the WARP pipeline.     
 2. < downloaded folder path >/WARP/bin/config_writer.py -d "< Path to INPUT folder >" -o "< Path to OUTPUT folder >"
 3. python < downloaded folder path >/WARP/bin/run_analysis.py -c < Path to OUTPUT folder >/lc_fam_config.ini -o < Path to OUTPUT folder >
 
