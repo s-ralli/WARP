@@ -14,7 +14,7 @@ The reference folder provides sample files for these 3 files. Each sample file c
 ## Command to run WARP -
 1. The requirements.txt provides additional python libraries that are need to run the WARP pipeline.     
 2. < downloaded folder path >/WARP/bin/config_writer.py -d "< Path to INPUT folder >" -o "< Path to OUTPUT folder >"
-3. python < downloaded folder path >/WARP/bin/run_analysis.py -c < Path to OUTPUT folder >/lc_fam_config.ini -o < Path to OUTPUT folder >
+3. python < downloaded folder path >/WARP/bin/run_analysis.py -c < Path to OUTPUT folder >/WARP_config.ini -o < Path to OUTPUT folder >
 
 **Note:** Create an input folder with the .vcf files for analysis and an output folder to store the .tsv files
 
