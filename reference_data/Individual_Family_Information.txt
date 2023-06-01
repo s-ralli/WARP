@@ -1,1 +1,5 @@
 ExID	Family	Sex	status	Age Dx	Relationship 	Health Status	Final Subtype	Blood	Saliva	Tumour	Total Affected 	Range of age
+Sample1	Fam1	M	1	45	Father	Affected	Cancer Type	Yes	No	No	2	45-49
+Sample2	Fam1	F	1	25	Proband	Affected	Cancer Type	Yes	No	No	2	25-29
+Sample3	Fam2	M	1	50	Brother	Affected	Cancer Type	Yes	No	No	3	50-54
+Sample4	Fam2	M	1	45	Proband	Affected	Cancer Type	Yes	No	No	3	45-49
