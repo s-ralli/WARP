@@ -144,8 +144,8 @@ class IndividualFamilyInfo(object):
             fam_df = self.if_info.loc[(self.if_info["Family"] == fam) & 
                     (self.if_info["Incidence rate"].notna())]
             row_count = fam_df.shape[0]
-            fam_df.columns = fam_df.columns.str.strip() #removespace in the 'Total Lymphoid Affected' column header
-            number_affected = fam_df['Total Lymphoid Affected'].unique().tolist()[0]
+            fam_df.columns = fam_df.columns.str.strip() #removespace in the 'Total Affected' column header
+            number_affected = fam_df['Total Affected'].unique().tolist()[0]
             average_individual_weights[str(fam)] = fam_df["Individual weight"].mean()
         for individual, row in self.if_info.iterrows():
             self.if_info.at[individual, 'Average Individual Weight by family'] = \
@@ -179,7 +179,7 @@ class IndividualFamilyInfo(object):
 
         self.if_info['Normalized Family Weight'] = np.nan
         self.if_info.columns = self.if_info.columns.str.strip()
-        max_family_weight = self.if_info['Total Lymphoid Affected'].max()
+        max_family_weight = self.if_info['Total Affected'].max()
 
         self.if_info['Normalized Sharing Weight'] = np.nan
         max_sharing_weight = self.if_info['Inverse sharing'].max()
@@ -190,7 +190,7 @@ class IndividualFamilyInfo(object):
             if normalized_individual_weight == 0.0:
                 normalized_individual_weight = 0.001 
 
-            normalized_family_weight = (row["Total Lymphoid Affected"])/(max_family_weight) if row.isnull()["Individual weight"] != True else np.nan
+            normalized_family_weight = (row["Total Affected"])/(max_family_weight) if row.isnull()["Individual weight"] != True else np.nan
             if normalized_family_weight == 0.0:
                 normalized_family_weight = 0.001
 
