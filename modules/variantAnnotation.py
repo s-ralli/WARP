@@ -62,9 +62,8 @@ class VAnnotator(object):
                         allele_freq = float(f)
                         break
 
-#                print(allele_freq)
+
                 population_af = 1- float(allele_freq)
-#                print(population_af)
                 v.population_weight = population_af
 
                 CADD_weight = record.INFO.get('CADD_RawScore', 1)
@@ -73,9 +72,8 @@ class VAnnotator(object):
                 elif float(CADD_weight) == 1:
                     CADD_weight = 16.168944
 
-#                print(CADD_weight)
+
                 prediction_weight = float(CADD_weight) / 16.168944
-#                print(prediction_weight)
                 v.prediction_weight = prediction_weight
 
                 for individual in reader.samples:
