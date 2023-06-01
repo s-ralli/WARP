@@ -1,5 +1,6 @@
 ## Incidence_Information.txt has 13 columns which are described below:
-**Column 1 - ExID** is the sample ID in your study
+**Column 1 - ExID** is the sample ID in your study [^2]
+**Column 1 - ExID** is the sample ID in your study 
 **Column 2 - Family** is the family ID of your study
 **COlumn 3 - Sex** could be male denoted by "M" or female denoted by "F"
 **Column 4 - Status** which is 1 for affected and 0 for unaffected
