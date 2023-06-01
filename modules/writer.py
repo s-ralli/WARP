@@ -45,7 +45,6 @@ class FileWriter(object):
                "Alt":",".join([str(x) for x in record.ALT]),
                "ID":record.ID,
                "Familyspecific_variant_weight": var.Familyspecific_variant_weight,
-#               "total_weight": var.total_weight,
                "vcf_info": ";".join(["{}={}".format(key, val) for key, val in record.INFO.items()])}
 
         self.df = self.df.append(res, ignore_index=True)
