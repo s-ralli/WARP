@@ -109,18 +109,14 @@ class IndividualFamilyInfo(object):
 
         self.if_info['Incidence rate'] = np.nan
         self.if_info['Individual weight'] = np.nan
-#        print(pd.isna(self.if_info['Health Status']))
-#        null_rows = self.if_info.columns[self.if_info.isnull().any()]
-#        print(self.if_info[null_rows].isnull().sum())
+
         for individual, row in self.if_info.iterrows():
             if 'Unaffected' in row['Health Status']:
                 self.if_info.at[individual, 'Incidence rate'] = np.nan
                 self.if_info.at[individual, 'Individual weight'] = np.nan
             else:
                 ageHeader = seerdata.age_to_range[row['Age Dx']]
-#                sex = seerdata.sex_to_seersex[row['Sex']]
                 subtype = row['Final Subtype']
-#                column = seerdata.seer_data[['Subtype', 'Sex']]
                 incidence_rate = seerdata.seer_data.loc[(seerdata.seer_data['Subtype1'] == subtype),
                                             ageHeader]
                 try:
@@ -147,15 +143,10 @@ class IndividualFamilyInfo(object):
         for fam in families:
             fam_df = self.if_info.loc[(self.if_info["Family"] == fam) & 
                     (self.if_info["Incidence rate"].notna())]
-#            print(fam_df)
             row_count = fam_df.shape[0]
-#            print(row_count)
             fam_df.columns = fam_df.columns.str.strip() #removespace in the 'Total Lymphoid Affected' column header
             number_affected = fam_df['Total Lymphoid Affected'].unique().tolist()[0]
-#            print(number_affected)
-#            assert(row_count == number_affected), "Invalid flag"
             average_individual_weights[str(fam)] = fam_df["Individual weight"].mean()
-#            print(average_individual_weights[str(fam)])
         for individual, row in self.if_info.iterrows():
             self.if_info.at[individual, 'Average Individual Weight by family'] = \
                     average_individual_weights[str(row['Family'])] if \
@@ -171,15 +162,11 @@ class IndividualFamilyInfo(object):
 
         self.if_info['Sharing weight'] = np.nan
         self.if_info['Inverse sharing'] = np.nan
-#        x = (len(self.if_info))
         for individual, row in self.if_info.iterrows():
             s_weight = sdf.loc[(sdf['Family ID'] == row['Family'])]['Sharing weight'].to_list()[0]
-#            print(s_weight)
             inverse_s_weight = sdf.loc[(sdf['Family ID'] == row['Family'])]['1/sw'].to_list()[0]
             self.if_info.at[individual, 'Sharing weight'] = float(s_weight)
             self.if_info.at[individual, 'Inverse sharing'] = float(inverse_s_weight)
-#            print(self.if_info.at[individual, 'Sharing weight'])
-#            print(self.if_info.at[individual, 'Inverse sharing'])
 
     def normalize_weights(self):
         """
@@ -189,16 +176,13 @@ class IndividualFamilyInfo(object):
         """
         self.if_info['Normalized Individual Weight'] = np.nan
         max_individual_weight = self.if_info['Individual weight'].max()
-#        min_individual_weight = self.if_info['Individual weight'].min()
 
         self.if_info['Normalized Family Weight'] = np.nan
         self.if_info.columns = self.if_info.columns.str.strip()
         max_family_weight = self.if_info['Total Lymphoid Affected'].max()
-#        min_family_weight = self.if_info['Total Lymphoid Affected'].min()
 
         self.if_info['Normalized Sharing Weight'] = np.nan
         max_sharing_weight = self.if_info['Inverse sharing'].max()
-#        min_sharing_weight = self.if_info['Inverse sharing'].min()
 
         for individual, row in self.if_info.iterrows():\
 
