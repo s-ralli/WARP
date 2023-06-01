@@ -1,1 +1,1 @@
-ExID	Family	Sex	status	Age Dx	Relationship 	Health Status	Final Subtype	Blood	Saliva	Tumour	Total Lymphoid Affected 	Range of age
+ExID	Family	Sex	status	Age Dx	Relationship 	Health Status	Final Subtype	Blood	Saliva	Tumour	Total Affected 	Range of age
