@@ -9,7 +9,7 @@ The WARP pipeline ranks variants by applying five weights. The five weights are 
 
 The reference folder provides sample files for these 3 files. Each sample file contains the required header except for the Sharing_Information.txt, for which spacing of data is also provided as an example. Please note that the file's name should be similar to the sample files provided.
 
-**Note:** Subtyp1 in the Incidence_Information.txt file is the combination of disease and gender.
+**Note:** Subtyp1 in the Incidence_Information.txt file is the combination of disease and sex.
 
 ## Command to run WARP -
 1. The requirements.txt provides additional python libraries that are need to run the WARP pipeline. These libraries need to be saved in a folder within the WARP.     
